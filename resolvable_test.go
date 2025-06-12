@@ -234,7 +234,7 @@ func TestRetry(t *testing.T) {
 	r = Retry(func(ctx context.Context) (int, error) {
 		count++
 		return count, resolveErr
-	})
+	}, RetryOpts{})
 
 	// resolve with error
 	resolveErr = errors.New("try again")
